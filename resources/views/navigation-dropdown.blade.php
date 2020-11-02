@@ -1,25 +1,20 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white border-b border-solid border-gray-300">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+    <div class="max-w-5xl mx-auto  px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-12 mt-2">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="flex-shrink-0 flex items-center px-3">
                     <a href="{{ route('dashboard') }}">
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
-                </div>
             </div>
-
+            <div class="search flex items-center justify-center mb-2 w-56">
+                <x-jet-input class="py-0" />
+            </div>
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden sm:flex sm:items-center mb-2">
                 <x-jet-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())

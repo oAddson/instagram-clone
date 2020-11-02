@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-solid border-gray-300">
+<nav x-data="{ open: false }" class="bg-white border-nav">
     <!-- Primary Navigation Menu -->
     <div class="max-w-5xl mx-auto  px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-12 mt-2">
@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="search flex items-center justify-center mb-2 w-56">
-                <x-jet-input class="py-0" />
+                <livewire:search-box></livewire:search-box>
             </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center mb-2">

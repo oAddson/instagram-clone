@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('nickname');
             $table->string('name');
+            $table->string('bio');
             $table->integer('posts');
             $table->bigInteger('followers');
             $table->bigInteger('following');

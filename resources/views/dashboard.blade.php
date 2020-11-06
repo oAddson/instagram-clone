@@ -4,13 +4,13 @@
             <div class="col-span-1 flex justify-center items-start pt-6 pb-9">
                 <a href="#">
                     <div class="story flex justify-center items-center w-40 h-40">
-                        <img class="rounded-full object-cover w-36 h-36" src="https://source.unsplash.com/featured/?{face},{beauty}/200x200">
+                        <img class="rounded-full object-cover w-36 h-36" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->nickname }}">
                     </div>
                 </a>
             </div>
             <div class="col-span-2 pt-6 pb-9 pl-4">
                 <div class="flex justify-start items-end">
-                    <div class="text-3xl pb-1 leading-4">{{ Auth::user()->name }}</div>
+                    <div class="text-3xl pb-1 leading-4">{{ Auth::user()->nickname }}</div>
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded ml-6 text-sm"> Seguir</button>
                 </div>
                 <div class="py-5">
@@ -33,7 +33,8 @@
                     </ul>
                 </div>
                 <div class="bio">
-
+                    <strong>{{ Auth::user()->name }}</strong><br>
+                    <?php echo nl2br(Auth::user()->bio)?>
                 </div>
             </div>
         </div>
